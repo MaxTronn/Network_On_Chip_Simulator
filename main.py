@@ -3,19 +3,6 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import random
-import time
-
-
-
-    # def clock(self):
-    #     tm = time.time()
-    #     endTime = time.time() + 20
-    #     i = 0
-    #     while time.time() < endTime:
-    #         i = i+1
-
-
-
 
 if __name__ == '__main__':
     with open('traffic.txt', 'r') as file:
