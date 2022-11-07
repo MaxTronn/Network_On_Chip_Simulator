@@ -16,12 +16,12 @@ class NOC :
     # def initialize_router_list(self):
     #     for i in range(4) :
     #         self.router_list.append(Router())
-def initialize_router_list(self):
-         for i in range(4) :
-             self.router_list.append(Router())
+    def initialize_router_list(self):
+        for i in range(4) :
+            self.router_list.append(Router())
 
         # Defining connections
-def mesh_connect(self):
+    def mesh_connect(self):
         # A -- B Connection
         self.router_list[0][0].east = self.router_list[0][1].west
         self.router_list[0][1].west = self.router_list[0][0].east
@@ -39,6 +39,3 @@ def mesh_connect(self):
         self.router_list[1][0].north = self.router_list[0][0].south
 
 
-    # This function handles the communication part of the NOC
-    def start_communication(self):
-        
