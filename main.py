@@ -5,11 +5,7 @@
 import random
 import time
 
-class NOC:
 
-    def __init__(self, c, p):
-        self.cycleList = c
-        self.packetList = p
 
     # def clock(self):
     #     tm = time.time()
@@ -18,13 +14,7 @@ class NOC:
     #     while time.time() < endTime:
     #         i = i+1
 
-class Router:
 
-    def __init__(self, connections, inp, out):
-        self.inp = 10
-        self.out = 10
-        self.connection = connections
-        self.tempStore = format(0, '#036b').replace("0b", "")
 
 
 if __name__ == '__main__':
@@ -48,3 +38,5 @@ if __name__ == '__main__':
             packetList.append(packet)
 
             print(header + "\n" + payload[0] + "\n" + payload[1] + "\n" + payload[2] + "\n" + tail)
+
+
