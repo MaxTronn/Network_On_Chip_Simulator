@@ -1,0 +1,165 @@
+Index: Router.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>class Router:\r\n\r\n    def __init__(self):\r\n        self.inp = 10\r\n        self.out = 10\r\n        # Temporary Storage (buffer) for the router\r\n        self.temp_store = format(0, '#036b').replace(\"0b\", \"\")\r\n        self.north = None\r\n        self.south = None\r\n        self.east = None\r\n        self.west = None\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Router.py b/Router.py
+--- a/Router.py	(revision 3b0b9f298efdeb7e0fc1bab94182219404ce3573)
++++ b/Router.py	(date 1667841849984)
+@@ -1,11 +1,16 @@
+ class Router:
+ 
+     def __init__(self):
+-        self.inp = 10
+-        self.out = 10
+-        # Temporary Storage (buffer) for the router
+-        self.temp_store = format(0, '#036b').replace("0b", "")
++
++        # Temporary Storage (buffer) for the router. Type = String
++        self.memory = format(0, '#036b').replace("0b", "")
++
++        # North south east west port is of type Router
+         self.north = None
+         self.south = None
+         self.east = None
+         self.west = None
++
++    # This function implements
++    def switch_allocator(self) :
++
+Index: NOC.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Router\r\n\r\nclass NOC :\r\n\r\n    router_list = []  # Routers [A,B,C,D]\r\n    packet_list = []\r\n\r\n    def __init__(self, traffic_file, routing_algo, latency, cycle_list, packet_list) :\r\n        self.latency = latency\r\n        self.traffic_file = traffic_file\r\n        self.routing_algo = routing_algo\r\n        self.cycle_list = cycle_list\r\n        self.packet_list = packet_list\r\n\r\n    # This function initilialises the router objects and defines connections between them.\r\n    def initialize_router_list(self):\r\n        for i in range(4) :\r\n            self.router_list.append(Router())\r\n\r\n        # Defining connections\r\n\r\n        # A -- B Connection\r\n        self.router_list[0].east = self.router_list[1]\r\n        self.router_list[1].west = self.router_list[0]\r\n\r\n        # B -- C Connection\r\n        self.router_list[1].south = self.router_list[2]\r\n        self.router_list[2].north = self.router_list[1]\r\n\r\n        # C -- D Connection\r\n        self.router_list[2].east = self.router_list[3]\r\n        self.router_list[3].west = self.router_list[2]\r\n\r\n        # A -- D Connection\r\n        self.router_list[0].south = self.router_list[3]\r\n        self.router_list[3].north = self.router_list[0]\r\n\r\n\r\n    # This function handles the communication part of the NOC\r\n    def start_communication(self):\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/NOC.py b/NOC.py
+--- a/NOC.py	(revision 3b0b9f298efdeb7e0fc1bab94182219404ce3573)
++++ b/NOC.py	(date 1667817160157)
+@@ -37,4 +37,4 @@
+ 
+ 
+     # This function handles the communication part of the NOC
+-    def start_communication(self):
++    def start_communication(self) :
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.10\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 3b0b9f298efdeb7e0fc1bab94182219404ce3573)
++++ b/.idea/misc.xml	(date 1667815350597)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/Network_On_Chip_Simulator.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Network_On_Chip_Simulator.iml b/.idea/Network_On_Chip_Simulator.iml
+--- a/.idea/Network_On_Chip_Simulator.iml	(revision 3b0b9f298efdeb7e0fc1bab94182219404ce3573)
++++ b/.idea/Network_On_Chip_Simulator.iml	(date 1667815350581)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
++    <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"785b0a7b-0baa-4220-aafb-299f66aa0981\" name=\"Default Changelist\" comment=\"main\">\r\n      <change afterPath=\"$PROJECT_DIR$/clock.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/NOC.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/NOC.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Router.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Router.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HD0OVSMBa8K2PV9ZAYyGazXRGj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"785b0a7b-0baa-4220-aafb-299f66aa0981\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1667804316372</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1667804316372</updated>\r\n      <workItem from=\"1667813709622\" duration=\"1031000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"main\">\r\n      <created>1667813870625</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667813870625</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"main\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"main\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3b0b9f298efdeb7e0fc1bab94182219404ce3573)
++++ b/.idea/workspace.xml	(date 1667818309888)
+@@ -1,8 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="main">
+-      <change afterPath="$PROJECT_DIR$/clock.py" afterDir="false" />
++    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+@@ -23,9 +22,6 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+   </component>
+   <component name="ProjectId" id="2HD0OVSMBa8K2PV9ZAYyGazXRGj" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -33,13 +29,11 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false"
+-  }
+-}]]></component>
++  <component name="PropertiesComponent">
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -48,21 +42,9 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1667804316372</updated>
+-      <workItem from="1667813709622" duration="1031000" />
+     </task>
+-    <task id="LOCAL-00001" summary="main">
+-      <created>1667813870625</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1667813870625</updated>
+-    </task>
+-    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+-  <component name="TypeScriptGeneratedFilesManager">
+-    <option name="version" value="3" />
+-  </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+       <map>
+@@ -74,8 +56,4 @@
+       </map>
+     </option>
+   </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="main" />
+-    <option name="LAST_COMMIT_MESSAGE" value="main" />
+-  </component>
+ </project>
+\ No newline at end of file

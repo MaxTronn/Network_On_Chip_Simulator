@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="crossbar added and clock removed">
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="main">
+      <change beforePath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOC.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossbar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +33,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
-  }
-}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,8 +41,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667804316372</updated>
-      <workItem from="1667813709622" duration="4572000" />
-      <workItem from="1667836621309" duration="4297000" />
+      <workItem from="1667813709622" duration="1031000" />
     </task>
     <task id="LOCAL-00001" summary="main">
       <created>1667813870625</created>
@@ -53,21 +50,7 @@
       <option name="project" value="LOCAL" />
       <updated>1667813870625</updated>
     </task>
-    <task id="LOCAL-00002" summary="main and clock">
-      <created>1667814862466</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667814862466</updated>
-    </task>
-    <task id="LOCAL-00003" summary="crossbar added and clock removed">
-      <created>1667841544936</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667841544936</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,8 +69,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main" />
-    <MESSAGE value="main and clock" />
-    <MESSAGE value="crossbar added and clock removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="crossbar added and clock removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="main" />
   </component>
 </project>

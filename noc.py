@@ -1,8 +1,8 @@
-import Router
+import router
 
-class NOC :
+class noc :
 
-    router_list = [[],[]]  # Routers [[A,B],[D,C]]
+    router_list = []  # Routers [A,B,C,D]
     packet_list = []
 
     def __init__(self, traffic_file, routing_algo, latency, cycle_list, packet_list) :
@@ -13,12 +13,9 @@ class NOC :
         self.packet_list = packet_list
 
     # This function initilialises the router objects and defines connections between them.
-    # def initialize_router_list(self):
-    #     for i in range(4) :
-    #         self.router_list.append(Router())
     def initialize_router_list(self):
         for i in range(4) :
-            self.router_list.append(Router())
+            self.router_list.append(router())
 
         # Defining connections
     def mesh_connect(self):

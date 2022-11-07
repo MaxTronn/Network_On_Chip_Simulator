@@ -1,4 +1,4 @@
-class Xbar:
+class crossbar:
 
     def __init__(self):
         self.input_port = None
