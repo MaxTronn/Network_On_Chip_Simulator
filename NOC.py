@@ -1,8 +1,9 @@
+import Router
+
 class NOC :
 
     router_list = []  # Routers [A,B,C,D]
     packet_list = []
-
 
     def __init__(self, traffic_file, routing_algo, latency, cycle_list, packet_list) :
         self.latency = latency
