@@ -9,4 +9,4 @@ class Port:
         self.port_buffer.put(incoming_flit)
 
     def send_from_port(self):
-        return self.port_buffer.get
+        return self.port_buffer.get()

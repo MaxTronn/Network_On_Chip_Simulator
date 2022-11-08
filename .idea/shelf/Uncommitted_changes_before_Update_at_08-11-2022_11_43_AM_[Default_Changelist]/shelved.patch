@@ -1,0 +1,79 @@
+Index: router.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>class router:\r\n\r\n    def __init__(self):\r\n        self.inp = 10\r\n        self.out = 10\r\n        # Temporary Storage (buffer) for the router\r\n        self.temp_store = format(0, '#036b').replace(\"0b\", \"\")\r\n        self.north = None\r\n        self.south = None\r\n        self.east = None\r\n        self.west = None\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/router.py b/router.py
+--- a/router.py	(revision 50ed7134b6d238c2957ee00897ff073f1347a8d3)
++++ b/router.py	(date 1667842550924)
+@@ -1,11 +1,11 @@
++import crossbar
++
+ class router:
+ 
+     def __init__(self):
+-        self.inp = 10
+-        self.out = 10
+-        # Temporary Storage (buffer) for the router
+-        self.temp_store = format(0, '#036b').replace("0b", "")
+-        self.north = None
+-        self.south = None
+-        self.east = None
+-        self.west = None
++        self.switch_allocator = switch_allocator()
++        self.crossbar = crossbar()
++        self.north = port()
++        self.south = port()
++        self.east = port()
++        self.west = port()
+Index: port.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from queue import Queue\r\nclass port:\r\n    def __init__(self):\r\n        self.port_buffer=Queue(maxsize=5)\r\n\r\n    def send_to_port(self, incoming_flit):\r\n        self.port_buffer.put(incoming_flit)\r\n    \r\n    def send_from_port(self):\r\n        return self.port_buffer.get\r\n\r\n        \r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/port.py b/port.py
+--- a/port.py	(revision 50ed7134b6d238c2957ee00897ff073f1347a8d3)
++++ b/port.py	(date 1667843287388)
+@@ -1,4 +1,5 @@
+ from queue import Queue
++
+ class port:
+     def __init__(self):
+         self.port_buffer=Queue(maxsize=5)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"785b0a7b-0baa-4220-aafb-299f66aa0981\" name=\"Default Changelist\" comment=\"main\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/NOC.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/noc.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Router.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/router.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/crossbar.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/crossbar.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HD0OVSMBa8K2PV9ZAYyGazXRGj\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"785b0a7b-0baa-4220-aafb-299f66aa0981\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1667804316372</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1667804316372</updated>\r\n      <workItem from=\"1667813709622\" duration=\"1031000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"main\">\r\n      <created>1667813870625</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667813870625</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"main\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"main\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 50ed7134b6d238c2957ee00897ff073f1347a8d3)
++++ b/.idea/workspace.xml	(date 1667886008888)
+@@ -2,12 +2,9 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="main">
+-      <change beforePath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/NOC.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/crossbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossbar.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/port.py" beforeDir="false" afterPath="$PROJECT_DIR$/port.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -66,6 +63,7 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="main" />
