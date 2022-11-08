@@ -11,4 +11,9 @@ class Crossbar:
     def transfer_data(self):
         self.output_port.buffer.put(self.input_port.buffer.get())
 
+    def terminate_connections(self):
+        self.transfer_data()
+        self.input_port = None
+        self.output_port = None
+
 

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossbar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noc.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/port.py" beforeDir="false" afterPath="$PROJECT_DIR$/port.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/switchallocator.py" beforeDir="false" afterPath="$PROJECT_DIR$/switchallocator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/switchallocator.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

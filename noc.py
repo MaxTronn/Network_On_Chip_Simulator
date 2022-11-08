@@ -19,20 +19,21 @@ class Noc :
 
         # Defining connections
     def mesh_connect(self):
+
         # A -- B Connection
-        self.router_list[0][0].east = self.router_list[0][1].west
-        self.router_list[0][1].west = self.router_list[0][0].east
+        self.router_list[0][0].east.connect(self.router_list[0][1].west)
+        self.router_list[0][1].west.connect(self.router_list[0][0].east)
 
         # B -- C Connection
-        self.router_list[0][1].south = self.router_list[1][1].north
-        self.router_list[1][1].north = self.router_list[0][1].south
+        self.router_list[0][1].south.connect(self.router_list[1][1].north)
+        self.router_list[1][1].north.connect(self.router_list[0][1].south)
 
         # C -- D Connection
-        self.router_list[1][0].east = self.router_list[1][1].west
-        self.router_list[1][1].west = self.router_list[1][0].east
+        self.router_list[1][0].east.connect(self.router_list[1][1].west)
+        self.router_list[1][1].west.connect(self.router_list[1][0].east)
 
         # A -- D Connection
-        self.router_list[0][0].south = self.router_list[1][0].north
-        self.router_list[1][0].north = self.router_list[0][0].south
+        self.router_list[0][0].south.connect(self.router_list[1][0].north)
+        self.router_list[1][0].north.connect(self.router_list[0][0].south)
 
 
