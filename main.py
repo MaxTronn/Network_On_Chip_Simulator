@@ -9,11 +9,23 @@ if __name__ == '__main__':
         packetList = []
         cycleList = []
         line = file.readlines()
+        decto2bin = ['00', '01', '10', '11']
+        for i in range(len(line)):
+            min_ind = i
+            cyclei = line[min_ind].split(" ")[0]
+            for j in range(i+1, len(line)):
+                cyclej = line[j].split(" ")[0]
+                if cyclei > cyclej:
+                    min_ind = j
+
+            line[i], line[min_ind] = line[min_ind], line[i]
+
         for i in range(len(line)):
             bitword = line[i].split(" ")
+
             cycle = int(bitword[0])
-            src = bin(int(bitword[1])).replace("0b", "")
-            dest = bin(int(bitword[2])).replace("0b", "")
+            src = decto2bin[int(bitword[1])]
+            dest = decto2bin[int(bitword[2])]
             loadbits = bitword[3]
             header = "00" + src + dest + bin(random.getrandbits(28)).replace("0b", "")
             payload = []
@@ -24,7 +36,7 @@ if __name__ == '__main__':
             packet = [header, payload[0], payload[1], payload[2], tail]
             packetList.append(packet)
 
-            print(header + "\n" + payload[0] + "\n" + payload[1] + "\n" + payload[2] + "\n" + tail)
+            print(header + " " + payload[0] + " " + payload[1] + " " + payload[2] + " " + tail+"\n")
 
 
 
