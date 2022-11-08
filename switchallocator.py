@@ -1,5 +1,7 @@
 # Switch Allocator provides control information to the crossbar
 
+# Switch Allocator works only when there is a header flit or a tail flit
+
 
 from queue import Queue
 from noc import Noc
