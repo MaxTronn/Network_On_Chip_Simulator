@@ -11,14 +11,13 @@ from crossbar import Crossbar
 class SwitchAllocator:
 
 
-    def __init__(self, north, south, east, west, proc_ele, routing_algo, owner_router):
-        self.north = north
-        self.south = south
-        self.east = east
-        self.west = west
-        self.proc_ele = proc_ele
-
-        self.routing_algo = routing_algo
+    def __init__(self, routing_algo, owner_router):
+        self.north = owner_router.north
+        self.south = owner_router.south
+        self.east = owner_router.east
+        self.west = owner_router.west
+        self.proc_ele = owner_router.proc_ele
+        self.routing_algo = owner_router.routing_algo
         self.owner_router = owner_router
 
 
