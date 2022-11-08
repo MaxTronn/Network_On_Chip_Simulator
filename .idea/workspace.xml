@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="Implemented switch allocator class">
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="main">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-11-2022_11_43_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-11-2022_11_43_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/switchallocator.py" beforeDir="false" afterPath="$PROJECT_DIR$/switchallocator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667892467726</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added comments for switch allocator class">
+      <created>1667892978324</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667892978324</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,11 +81,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main" />
     <MESSAGE value="Implemented switch allocator class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented switch allocator class" />
+    <MESSAGE value="Added comments for switch allocator class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments for switch allocator class" />
   </component>
 </project>

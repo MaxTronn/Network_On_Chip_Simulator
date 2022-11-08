@@ -11,21 +11,20 @@ from crossbar import Crossbar
 class SwitchAllocator:
 
 
-    def __init__(self, north, south, east, west, proc_ele, routing_algo, owner_router):
-        self.north = north
-        self.south = south
-        self.east = east
-        self.west = west
-        self.proc_ele = proc_ele
-
-        self.routing_algo = routing_algo
+    def __init__(self, routing_algo, owner_router):
+        self.north = owner_router.north
+        self.south = owner_router.south
+        self.east = owner_router.east
+        self.west = owner_router.west
+        self.proc_ele = owner_router.proc_ele
+        self.routing_algo = owner_router.routing_algo
         self.owner_router = owner_router
 
 
     # This function is called for the header flit to make connections in the crossbar
     def connect_ports(self, source_port):
 
-        flit = source.buffer.front()
+        flit = source_port.buffer.front()
 
         # Figure out the destination router using header flit
         # 00 = A
@@ -41,16 +40,16 @@ class SwitchAllocator:
             self.owner_router.Crossbar.connect(source_port, self.proc_ele)
 
         # Search if adjacent router is the destination router
-        elif(self.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.north.owner_router) :
+        elif(self.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.north.connected_router_port.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.north)
 
-        elif(self.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.south.owner_router) :
+        elif(self.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.south.connected_router_port.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.south)
 
-        elif (self.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.east.owner_router):
+        elif (self.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.east.connected_router_port.owner_router):
             self.owner_router.Crossbar.connect(source_port, self.east)
 
-        elif (self.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.west.owner_router):
+        elif (self.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.west.connected_router_port.owner_router):
             self.owner_router.Crossbar.connect(source_port, self.west)
 
         else :
