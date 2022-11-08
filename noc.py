@@ -2,7 +2,7 @@ import router
 
 class Noc :
 
-    router_list = []  # Routers [A,B,C,D]
+    router_list = [[],[]]  # Routers [[A,B],[C,D]]
     packet_list = []
 
     def __init__(self, traffic_file, routing_algo, latency, cycle_list, packet_list) :
@@ -35,5 +35,23 @@ class Noc :
         # A -- D Connection
         self.router_list[0][0].south.connect(self.router_list[1][0].north)
         self.router_list[1][0].north.connect(self.router_list[0][0].south)
+
+    def start_communication(self):
+        for p in range(self.packet_list):
+            s1=0
+            s2=0
+            for f in range(self.packet_list[p]):
+                if(f==0):
+                    s1=self.packet_list[p][f][2]
+                    s2=self.packet_list[p][f][3]
+                    s1=int(s1)
+                    s2=int(s2)
+                    self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[p][f])
+                else: 
+                    self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[p][f])
+
+            
+
+
 
 
