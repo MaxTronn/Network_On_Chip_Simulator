@@ -1,6 +1,6 @@
 import router
 
-class noc :
+class Noc :
 
     router_list = []  # Routers [A,B,C,D]
     packet_list = []

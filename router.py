@@ -1,4 +1,4 @@
-class router:
+class Router:
 
     def __init__(self):
         self.inp = 10
