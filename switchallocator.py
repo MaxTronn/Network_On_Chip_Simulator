@@ -4,7 +4,6 @@
 
 
 from queue import Queue
-from noc import Noc
 from crossbar import Crossbar
 
 

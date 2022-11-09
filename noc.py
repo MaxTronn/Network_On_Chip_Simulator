@@ -2,24 +2,29 @@ import router
 
 class Noc :
 
-    router_list = [[],[]]  # Routers [[A,B],[C,D]]
-    packet_list = []
-    routing_path_ports = []
-    routing_path_routers = []
+    # router_list = [[],[]]  # Routers [[A,B],[C,D]]
+    # packet_list = []
+    # routing_path_ports = []
+    # routing_path_routers = []
 
     def __init__(self, routing_algo, cycle_list, packet_list) :
 
         self.routing_algo = routing_algo
         self.cycle_list = cycle_list
         self.packet_list = packet_list
+        self.router_list = [[],[]]
+
+        self.initialize_router_list()
+        self.mesh_connect()
 
     # This function initilialises the router objects and defines connections between them.
     def initialize_router_list(self):
         
-        self.router_list.append(router("A"))
-        self.router_list.append(router("B"))
-        self.router_list.append(router("C"))
-        self.router_list.append(router("D"))
+        self.router_list[0].append(router.Router(self.routing_algo, "A"))
+        self.router_list[0].append(router.Router(self.routing_algo, "B"))
+
+        self.router_list[1].append(router.Router(self.routing_algo, "D"))
+        self.router_list[1].append(router.Router(self.routing_algo, "C"))
 
         # Defining connections
     def mesh_connect(self):
@@ -41,7 +46,7 @@ class Noc :
         self.router_list[1][0].north.connect(self.router_list[0][0].south)
 
     def print_routing_path_ports(self):
-        for prt in self.routing_path_ports :
+        for prt in router.Router.routing_path_ports :
             print(prt.name)
 
     def start_communication(self):

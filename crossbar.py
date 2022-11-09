@@ -1,5 +1,3 @@
-from noc import Noc
-
 class Crossbar:
     def __init__(self):
         self.input_port = None
@@ -11,8 +9,8 @@ class Crossbar:
         self.transfer_data()
 
     def transfer_data(self):
-        Noc.routing_path_ports.append(self.input_port)
         self.output_port.buffer.put(self.input_port.buffer.get())
+
 
     def terminate_connections(self):
         self.transfer_data()
