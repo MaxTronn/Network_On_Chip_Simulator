@@ -30,8 +30,8 @@ class SwitchAllocator:
         # 11 = C
         # 10 = D
 
-        dest_bit_0 = int(head_flit[4])
-        dest_bit_1 = int(head_flit[5])
+        dest_bit_1 = int(head_flit[4])
+        dest_bit_0 = int(head_flit[5])
 
         # If the current router is the destination router, send the flit to Proc_ele port
         if(self.router_list[dest_bit_1][dest_bit_0] == self.owner_router) :

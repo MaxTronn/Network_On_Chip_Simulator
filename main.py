@@ -44,9 +44,9 @@ if __name__ == '__main__':
     # print(noc_obj.router_list[1][0].east.connected_router_port.owner_router.name)
     # print(noc_obj.router_list[1][0].east.connected_router_port.name)
 
-    noc_obj = noc.Noc('XY' , cycleList, packetList)
+    noc_obj = noc.Noc('YX' , cycleList, packetList)
     noc_obj.start_communication()
-    noc_obj.print_routing_path_ports()
+
     # print(type(packetList[0][0][3]))
 
 
