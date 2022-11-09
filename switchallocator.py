@@ -21,7 +21,7 @@ class SwitchAllocator:
     def connect_ports(self, source_port):
 
         head_flit = source_port.buffer.front()
-
+        reached_dest = False
         # Figure out the destination router using header flit
         # 00 = A
         # 01 = B
@@ -34,6 +34,7 @@ class SwitchAllocator:
         # If the current router is the destination router, send the flit to Proc_ele port
         if(Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.owner_router.proc_ele)
+            return True
 
         # Search if adjacent router is the destination router
         elif(self.owner_router.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.north.connected_router_port.owner_router) :
@@ -68,6 +69,7 @@ class SwitchAllocator:
                 else:
                     self.owner_router.Crossbar.connect(source_port, self.owner_router.south.connected_router_port)
 
+        return reached_dest
 
     # This function is called when the tail flit arrives at the router
     def disconnect_ports(self):
