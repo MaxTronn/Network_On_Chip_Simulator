@@ -20,7 +20,7 @@ class SwitchAllocator:
     # This function is called for the header flit to make connections in the crossbar
     def connect_ports(self, source_port):
 
-        flit = source_port.buffer.front()
+        head_flit = source_port.buffer.front()
 
         # Figure out the destination router using header flit
         # 00 = A
@@ -28,45 +28,45 @@ class SwitchAllocator:
         # 11 = C
         # 10 = D
 
-        dest_bit_0 = flit[4]
-        dest_bit_1 = flit[5]
+        dest_bit_0 = head_flit[4]
+        dest_bit_1 = head_flit[5]
 
         # If the current router is the destination router, send the flit to Proc_ele port
         if(Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.owner_router.proc_ele)
 
         # Search if adjacent router is the destination router
-        elif(self.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.north.connected_router_port.owner_router) :
-            self.owner_router.Crossbar.connect(source_port, self.owner_router.north)
+        elif(self.owner_router.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.north.connected_router_port.owner_router) :
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.north.connected_router_port)
 
 
-        elif(self.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.south.connected_router_port.owner_router) :
-            self.owner_router.Crossbar.connect(source_port, self.owner_router.south)
+        elif(self.owner_router.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.south.connected_router_port.owner_router) :
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.south.connected_router_port)
 
 
-        elif (self.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.east.connected_router_port.owner_router):
-            self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
+        elif (self.owner_router.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.east.connected_router_port.owner_router):
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.east.connected_router_port)
 
 
-        elif (self.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.west.connected_router_port.owner_router):
-            self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
+        elif (self.owner_router.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.west.connected_router_port.owner_router):
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.west.connected_router_port)
 
         else :
             #If ajacent router is not destination router, send to the next router as per routing algo
             if(self.routing_algo == 'XY') :
-                if(self.east != None) :
-                    self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
+                if(self.owner_router.east != None) :
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.east.connected_router_port)
 
                 else:
-                    self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.west.connected_router_port)
 
 
             else : # routing_algo == 'YX'
-                if (self.north != None):
-                    self.owner_router.Crossbar.connect(source_port, self.owner_router.north)
+                if (self.owner_router.north != None):
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.north.connected_router_port)
 
                 else:
-                    self.owner_router.Crossbar.connect(source_port, self.owner_router.south)
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.south.connected_router_port)
 
 
     # This function is called when the tail flit arrives at the router
