@@ -13,7 +13,6 @@ class Crossbar:
 
 
     def terminate_connections(self):
-        self.transfer_data()
         self.input_port = None
         self.output_port = None
 
