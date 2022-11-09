@@ -58,7 +58,7 @@ class Noc :
 
     def start_communication(self):
         for i in range(len(self.packet_list)):
-            print("hi")
+
             # s1 and s2 are the bits for source router
             s1 = int(self.packet_list[i][0][2])
             s2 = int(self.packet_list[i][0][3])
@@ -68,25 +68,50 @@ class Noc :
             # place the packet in buffer of proc_ele port in source router
             self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][0])
 
+            # create routing path
             self.router_list[s1][s2].create_routing_path(self.router_list[s1][s2].proc_ele)
-            print("hi")
+
+            # currently, buffers of all elements are empty
+
+
+
+            # Place the packet in the buffer of proc_ele of source router
             for j in range(5):
                 self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][j])
-                router.Router.routing_path_ports[0].buffer.put(self.packet_list[i][j])
-                for k in range(len(router.Router.routing_path_ports)-1):
-                    router.Router.routing_path_ports[i+1].buffer.put(router.Router.routing_path_ports[i].buffer.get())
+
+            print("Packet placed in buffer of source router")
+                # for k in range(len(router.Router.routing_path_ports)-1):
+                #     router.Router.routing_path_ports[k+1].buffer.put(router.Router.routing_path_ports[i].buffer.get())
+
+            start_cycle = self.cycle_list[i]
+            for j in range(5) :
+                cur_cycle = start_cycle + j
+
+                for k in range( len(router.Router.routing_path_ports) - 1 ) :
+                    source_port = router.Router.routing_path_ports[k]
+                    dest_port = router.Router.routing_path_ports[k+1]
+
+                    dest_port.buffer.put(source_port.buffer.get())
+                    cur_cycle += 1
+
+                    string = str(int(cur_cycle)) + ": ROUTER " + \
+                             dest_port.owner_router.name + "." + dest_port.name + "  FROM: "\
+                             +  source_port.owner_router.name + "." + source_port.name   +                                               \
+                             "  RECEIVED FLIT: " + self.packet_list[i][j] + " FLIT NUMBER : " + str(j) + "\n"
+                    print(string)
+                    logFile.write(string)
 
 
 
-            for j in range(5):
-                print("hii")
-                string = str(int(self.cycle_list[i]) + len(router.Router.routing_path_ports))+": ROUTER "+self.router_list[d1][d2].name + " RECEIVED FLIT: "+self.router_list[d1][d2].proc_ele.buffer.get()+"\n"
-                print(string)
-                logFile.write(string)
-            print("hi")
+            # for j in range(5):
+            #
+            #     string = str(int(self.cycle_list[i] + j) + len(router.Router.routing_path_ports))+": ROUTER "+ self.router_list[d1][d2].name + " RECEIVED FLIT: " +self.router_list[s1][s2].proc_ele.buffer.get()+"\n"
+            #     print(string)
+            #     logFile.write(string)
+            # print("hi")
 
-            # here we need a return statement from the router called to signify packet has been transmitted
-            self.print_routing_path_ports()
+
+            #self.print_routing_path_ports()
         logFile.close()
             
 
