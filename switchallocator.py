@@ -57,7 +57,6 @@ class SwitchAllocator:
                 if(self.east != None) :
                     self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
 
-
                 else:
                     self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
 
