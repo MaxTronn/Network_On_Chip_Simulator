@@ -1,5 +1,5 @@
 import router
-logFile = open("populate.txt", 'w', newline='')
+logFile = open("populate.log", 'w', newline='')
 
 class Noc :
 
