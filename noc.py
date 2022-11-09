@@ -72,7 +72,14 @@ class Noc :
             print("hi")
             for j in range(5):
                 self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][j])
+                router.Router.routing_path_ports[0].buffer.put(self.packet_list[i][j])
+                for k in range(len(router.Router.routing_path_ports)-1):
+                    router.Router.routing_path_ports[i+1].buffer.put(router.Router.routing_path_ports[i].buffer.get())
+
+
+
             for j in range(5):
+                print("hii")
                 string = str(int(self.cycle_list[i]) + len(router.Router.routing_path_ports))+": ROUTER "+self.router_list[d1][d2].name + " RECEIVED FLIT: "+self.router_list[d1][d2].proc_ele.buffer.get()+"\n"
                 print(string)
                 logFile.write(string)
