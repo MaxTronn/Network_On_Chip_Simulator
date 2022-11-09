@@ -1,5 +1,6 @@
 import router
 logFile = open("populate.txt", 'w', newline='')
+
 class Noc :
 
     # router_list = [[],[]]  # Routers [[A,B],[C,D]]
@@ -25,6 +26,7 @@ class Noc :
 
         self.router_list[1].append(router.Router(self.routing_algo, "D"))
         self.router_list[1].append(router.Router(self.routing_algo, "C"))
+
 
         self.router_list[0][0].set_router_list(self.router_list)
         self.router_list[0][1].set_router_list(self.router_list)
@@ -58,6 +60,7 @@ class Noc :
 
     def start_communication(self):
         for i in range(len(self.packet_list)):
+            print("hi")
 
             # s1 and s2 are the bits for source router
             s1 = int(self.packet_list[i][0][2])
@@ -65,7 +68,8 @@ class Noc :
             d1 = int(self.packet_list[i][0][4])
             d2 = int(self.packet_list[i][0][5])
 
-            # place the packet in buffer of proc_ele port in source router
+            # place the header flit in buffer of proc_ele port of source router
+
             self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][0])
 
             # create routing path
@@ -73,15 +77,11 @@ class Noc :
 
             # currently, buffers of all elements are empty
 
-
-
-            # Place the packet in the buffer of proc_ele of source router
+            # Place the packet in the buffer of proc_ele port of source router
             for j in range(5):
                 self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][j])
 
             print("Packet placed in buffer of source router")
-                # for k in range(len(router.Router.routing_path_ports)-1):
-                #     router.Router.routing_path_ports[k+1].buffer.put(router.Router.routing_path_ports[i].buffer.get())
 
             start_cycle = self.cycle_list[i]
             for j in range(5) :
@@ -93,28 +93,20 @@ class Noc :
 
                     dest_port.buffer.put(source_port.buffer.get())
                     cur_cycle += 1
-
-                    string = str(int(cur_cycle)) + ": ROUTER " + \
-                             dest_port.owner_router.name + "." + dest_port.name + "  FROM: "\
-                             +  source_port.owner_router.name + "." + source_port.name   +                                               \
-                             "  RECEIVED FLIT: " + self.packet_list[i][j] + " FLIT NUMBER : " + str(j) + "\n"
+                    string = str(int(cur_cycle)) + "  :  " + self.packet_list[i][j] + "  flit was sent from " + \
+                             source_port.name + " port of router " + source_port.owner_router.name\
+                             + " to " + dest_port.name + " port of router " + dest_port.owner_router.name + "\n"
                     print(string)
                     logFile.write(string)
 
+            for j in range(5):
+                router.Router.routing_path_ports[len(router.Router.routing_path_ports)-1].buffer.get()
 
+            self.router_list[0][0].switch_allocator.disconnect_ports()
+            self.router_list[0][1].switch_allocator.disconnect_ports()
+            self.router_list[1][0].switch_allocator.disconnect_ports()
+            self.router_list[1][1].switch_allocator.disconnect_ports()
+            router.Router.routing_path_ports = []
 
-            # for j in range(5):
-            #
-            #     string = str(int(self.cycle_list[i] + j) + len(router.Router.routing_path_ports))+": ROUTER "+ self.router_list[d1][d2].name + " RECEIVED FLIT: " +self.router_list[s1][s2].proc_ele.buffer.get()+"\n"
-            #     print(string)
-            #     logFile.write(string)
-            # print("hi")
-
-
-            #self.print_routing_path_ports()
         logFile.close()
-            
-
-
-
 

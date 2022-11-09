@@ -1,15 +1,140 @@
-41: ROUTER B.west  FROM: A.proc_ele  RECEIVED FLIT: 000011110110111010011101000000111 FLIT NUMBER : 0
-42: ROUTER C.north  FROM: B.west  RECEIVED FLIT: 000011110110111010011101000000111 FLIT NUMBER : 0
-43: ROUTER C.proc_ele  FROM: C.north  RECEIVED FLIT: 000011110110111010011101000000111 FLIT NUMBER : 0
-42: ROUTER B.west  FROM: A.proc_ele  RECEIVED FLIT: 0100000000000000000000000000000000 FLIT NUMBER : 1
-43: ROUTER C.north  FROM: B.west  RECEIVED FLIT: 0100000000000000000000000000000000 FLIT NUMBER : 1
-44: ROUTER C.proc_ele  FROM: C.north  RECEIVED FLIT: 0100000000000000000000000000000000 FLIT NUMBER : 1
-43: ROUTER B.west  FROM: A.proc_ele  RECEIVED FLIT: 0100000000000000000000000000000000 FLIT NUMBER : 2
-44: ROUTER C.north  FROM: B.west  RECEIVED FLIT: 0100000000000000000000000000000000 FLIT NUMBER : 2
-45: ROUTER C.proc_ele  FROM: C.north  RECEIVED FLIT: 0100000000000000000000000000000000 FLIT NUMBER : 2
-44: ROUTER B.west  FROM: A.proc_ele  RECEIVED FLIT: 0100000000000000000000000000000001 FLIT NUMBER : 3
-45: ROUTER C.north  FROM: B.west  RECEIVED FLIT: 0100000000000000000000000000000001 FLIT NUMBER : 3
-46: ROUTER C.proc_ele  FROM: C.north  RECEIVED FLIT: 0100000000000000000000000000000001 FLIT NUMBER : 3
-45: ROUTER B.west  FROM: A.proc_ele  RECEIVED FLIT: 111101001101100100101000010000110 FLIT NUMBER : 4
-46: ROUTER C.north  FROM: B.west  RECEIVED FLIT: 111101001101100100101000010000110 FLIT NUMBER : 4
-47: ROUTER C.proc_ele  FROM: C.north  RECEIVED FLIT: 111101001101100100101000010000110 FLIT NUMBER : 4
+2  :  000010110011111110011111110000001  flit was sent from proc_ele port of router A to north port of router D
+3  :  000010110011111110011111110000001  flit was sent from north port of router D to proc_ele port of router D
+3  :  0110000000000000000000000000000000  flit was sent from proc_ele port of router A to north port of router D
+4  :  0110000000000000000000000000000000  flit was sent from north port of router D to proc_ele port of router D
+4  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router A to north port of router D
+5  :  0100000000000000000000000000000000  flit was sent from north port of router D to proc_ele port of router D
+5  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router A to north port of router D
+6  :  0100000000000000000000000000000000  flit was sent from north port of router D to proc_ele port of router D
+6  :  11100010001111001111000101001010  flit was sent from proc_ele port of router A to north port of router D
+7  :  11100010001111001111000101001010  flit was sent from north port of router D to proc_ele port of router D
+10  :  001000100110001101000010001011011  flit was sent from proc_ele port of router D to south port of router A
+11  :  001000100110001101000010001011011  flit was sent from south port of router A to proc_ele port of router A
+11  :  0110000000000000000000000000000000  flit was sent from proc_ele port of router D to south port of router A
+12  :  0110000000000000000000000000000000  flit was sent from south port of router A to proc_ele port of router A
+12  :  0110000000000000000000000000000000  flit was sent from proc_ele port of router D to south port of router A
+13  :  0110000000000000000000000000000000  flit was sent from south port of router A to proc_ele port of router A
+13  :  0100000000000000000000000000000100  flit was sent from proc_ele port of router D to south port of router A
+14  :  0100000000000000000000000000000100  flit was sent from south port of router A to proc_ele port of router A
+14  :  111111000110101100100010111111001  flit was sent from proc_ele port of router D to south port of router A
+15  :  111111000110101100100010111111001  flit was sent from south port of router A to proc_ele port of router A
+18  :  00011111001100101110010001001110  flit was sent from proc_ele port of router B to north port of router C
+19  :  00011111001100101110010001001110  flit was sent from north port of router C to proc_ele port of router C
+19  :  0110000000000000001100000000000000  flit was sent from proc_ele port of router B to north port of router C
+20  :  0110000000000000001100000000000000  flit was sent from north port of router C to proc_ele port of router C
+20  :  0110000000000011000000000000110000  flit was sent from proc_ele port of router B to north port of router C
+21  :  0110000000000011000000000000110000  flit was sent from north port of router C to proc_ele port of router C
+21  :  0100000000000011000000000000000100  flit was sent from proc_ele port of router B to north port of router C
+22  :  0100000000000011000000000000000100  flit was sent from north port of router C to proc_ele port of router C
+22  :  111100111011111111101100000100110  flit was sent from proc_ele port of router B to north port of router C
+23  :  111100111011111111101100000100110  flit was sent from north port of router C to proc_ele port of router C
+26  :  00110111000000110000111101001  flit was sent from proc_ele port of router C to south port of router B
+27  :  00110111000000110000111101001  flit was sent from south port of router B to proc_ele port of router B
+27  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router C to south port of router B
+28  :  0100000000000000000000000000000000  flit was sent from south port of router B to proc_ele port of router B
+28  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router C to south port of router B
+29  :  0100000000000000000000000000000000  flit was sent from south port of router B to proc_ele port of router B
+29  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router C to south port of router B
+30  :  0100000000000000000000000000000001  flit was sent from south port of router B to proc_ele port of router B
+30  :  1111010010001001011011001110100101  flit was sent from proc_ele port of router C to south port of router B
+31  :  1111010010001001011011001110100101  flit was sent from south port of router B to proc_ele port of router B
+34  :  000001101111000000111101011011110  flit was sent from proc_ele port of router A to west port of router B
+35  :  000001101111000000111101011011110  flit was sent from west port of router B to proc_ele port of router B
+35  :  0100000000000001111111111100000000  flit was sent from proc_ele port of router A to west port of router B
+36  :  0100000000000001111111111100000000  flit was sent from west port of router B to proc_ele port of router B
+36  :  0100000111111111111000000000000111  flit was sent from proc_ele port of router A to west port of router B
+37  :  0100000111111111111000000000000111  flit was sent from west port of router B to proc_ele port of router B
+37  :  0111111111000000000000111111111111  flit was sent from proc_ele port of router A to west port of router B
+38  :  0111111111000000000000111111111111  flit was sent from west port of router B to proc_ele port of router B
+38  :  1111000111000111000001100100010011  flit was sent from proc_ele port of router A to west port of router B
+39  :  1111000111000111000001100100010011  flit was sent from west port of router B to proc_ele port of router B
+41  :  00001110100110011110000010001010  flit was sent from proc_ele port of router A to west port of router B
+42  :  00001110100110011110000010001010  flit was sent from west port of router B to north port of router C
+43  :  00001110100110011110000010001010  flit was sent from north port of router C to proc_ele port of router C
+42  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router A to west port of router B
+43  :  0100000000000000000000000000000000  flit was sent from west port of router B to north port of router C
+44  :  0100000000000000000000000000000000  flit was sent from north port of router C to proc_ele port of router C
+43  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router A to west port of router B
+44  :  0100000000000000000000000000000000  flit was sent from west port of router B to north port of router C
+45  :  0100000000000000000000000000000000  flit was sent from north port of router C to proc_ele port of router C
+44  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router A to west port of router B
+45  :  0100000000000000000000000000000001  flit was sent from west port of router B to north port of router C
+46  :  0100000000000000000000000000000001  flit was sent from north port of router C to proc_ele port of router C
+45  :  1110101011100101011100000010110001  flit was sent from proc_ele port of router A to west port of router B
+46  :  1110101011100101011100000010110001  flit was sent from west port of router B to north port of router C
+47  :  1110101011100101011100000010110001  flit was sent from north port of router C to proc_ele port of router C
+48  :  0011001000111011111111000110110000  flit was sent from proc_ele port of router C to east port of router D
+49  :  0011001000111011111111000110110000  flit was sent from east port of router D to south port of router A
+50  :  0011001000111011111111000110110000  flit was sent from south port of router A to proc_ele port of router A
+49  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router C to east port of router D
+50  :  0100000000000000000000000000000000  flit was sent from east port of router D to south port of router A
+51  :  0100000000000000000000000000000000  flit was sent from south port of router A to proc_ele port of router A
+50  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router C to east port of router D
+51  :  0100000000000000000000000000000000  flit was sent from east port of router D to south port of router A
+52  :  0100000000000000000000000000000000  flit was sent from south port of router A to proc_ele port of router A
+51  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router C to east port of router D
+52  :  0100000000000000000000000000000001  flit was sent from east port of router D to south port of router A
+53  :  0100000000000000000000000000000001  flit was sent from south port of router A to proc_ele port of router A
+52  :  1110011010100011010010011101010  flit was sent from proc_ele port of router C to east port of router D
+53  :  1110011010100011010010011101010  flit was sent from east port of router D to south port of router A
+54  :  1110011010100011010010011101010  flit was sent from south port of router A to proc_ele port of router A
+55  :  001110110010001111110111101000111  flit was sent from proc_ele port of router C to east port of router D
+56  :  001110110010001111110111101000111  flit was sent from east port of router D to proc_ele port of router D
+56  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router C to east port of router D
+57  :  0100000000000000000000000000000000  flit was sent from east port of router D to proc_ele port of router D
+57  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router C to east port of router D
+58  :  0100000000000000000000000000000000  flit was sent from east port of router D to proc_ele port of router D
+58  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router C to east port of router D
+59  :  0100000000000000000000000000000001  flit was sent from east port of router D to proc_ele port of router D
+59  :  1111010111111100110011100111110011  flit was sent from proc_ele port of router C to east port of router D
+60  :  1111010111111100110011100111110011  flit was sent from east port of router D to proc_ele port of router D
+62  :  000100101000001100100010110101000  flit was sent from proc_ele port of router B to east port of router A
+63  :  000100101000001100100010110101000  flit was sent from east port of router A to proc_ele port of router A
+63  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router B to east port of router A
+64  :  0100000000000000000000000000000000  flit was sent from east port of router A to proc_ele port of router A
+64  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router B to east port of router A
+65  :  0100000000000000000000000000000000  flit was sent from east port of router A to proc_ele port of router A
+65  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router B to east port of router A
+66  :  0100000000000000000000000000000001  flit was sent from east port of router A to proc_ele port of router A
+66  :  1111011001010110101011000110001111  flit was sent from proc_ele port of router B to east port of router A
+67  :  1111011001010110101011000110001111  flit was sent from east port of router A to proc_ele port of router A
+69  :  000110101101000011101010101000101  flit was sent from proc_ele port of router B to east port of router A
+70  :  000110101101000011101010101000101  flit was sent from east port of router A to north port of router D
+71  :  000110101101000011101010101000101  flit was sent from north port of router D to proc_ele port of router D
+70  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router B to east port of router A
+71  :  0100000000000000000000000000000000  flit was sent from east port of router A to north port of router D
+72  :  0100000000000000000000000000000000  flit was sent from north port of router D to proc_ele port of router D
+71  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router B to east port of router A
+72  :  0100000000000000000000000000000000  flit was sent from east port of router A to north port of router D
+73  :  0100000000000000000000000000000000  flit was sent from north port of router D to proc_ele port of router D
+72  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router B to east port of router A
+73  :  0100000000000000000000000000000001  flit was sent from east port of router A to north port of router D
+74  :  0100000000000000000000000000000001  flit was sent from north port of router D to proc_ele port of router D
+73  :  11110101010011011011000111000  flit was sent from proc_ele port of router B to east port of router A
+74  :  11110101010011011011000111000  flit was sent from east port of router A to north port of router D
+75  :  11110101010011011011000111000  flit was sent from north port of router D to proc_ele port of router D
+76  :  0010011000101010110000011000111000  flit was sent from proc_ele port of router D to west port of router C
+77  :  0010011000101010110000011000111000  flit was sent from west port of router C to south port of router B
+78  :  0010011000101010110000011000111000  flit was sent from south port of router B to proc_ele port of router B
+77  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router D to west port of router C
+78  :  0100000000000000000000000000000000  flit was sent from west port of router C to south port of router B
+79  :  0100000000000000000000000000000000  flit was sent from south port of router B to proc_ele port of router B
+78  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router D to west port of router C
+79  :  0100000000000000000000000000000000  flit was sent from west port of router C to south port of router B
+80  :  0100000000000000000000000000000000  flit was sent from south port of router B to proc_ele port of router B
+79  :  0100000000000000000000000000000001  flit was sent from proc_ele port of router D to west port of router C
+80  :  0100000000000000000000000000000001  flit was sent from west port of router C to south port of router B
+81  :  0100000000000000000000000000000001  flit was sent from south port of router B to proc_ele port of router B
+80  :  1111000101000101111001011011110100  flit was sent from proc_ele port of router D to west port of router C
+81  :  1111000101000101111001011011110100  flit was sent from west port of router C to south port of router B
+82  :  1111000101000101111001011011110100  flit was sent from south port of router B to proc_ele port of router B
+101  :  0010111110010011010000100010010010  flit was sent from proc_ele port of router D to west port of router C
+102  :  0010111110010011010000100010010010  flit was sent from west port of router C to proc_ele port of router C
+102  :  0110000000000000000000000000000000  flit was sent from proc_ele port of router D to west port of router C
+103  :  0110000000000000000000000000000000  flit was sent from west port of router C to proc_ele port of router C
+103  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router D to west port of router C
+104  :  0100000000000000000000000000000000  flit was sent from west port of router C to proc_ele port of router C
+104  :  0100000000000000000000000000000000  flit was sent from proc_ele port of router D to west port of router C
+105  :  0100000000000000000000000000000000  flit was sent from west port of router C to proc_ele port of router C
+105  :  1110010001111111111101110100010110  flit was sent from proc_ele port of router D to west port of router C
+106  :  1110010001111111111101110100010110  flit was sent from west port of router C to proc_ele port of router C
