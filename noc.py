@@ -52,7 +52,7 @@ class Noc :
 
     def print_routing_path_ports(self):
         for prt in router.Router.routing_path_ports :
-            print(prt.name)
+            print(prt.owner_router.name +  " " +  prt.name)
 
     def start_communication(self):
         for packet in self.packet_list:

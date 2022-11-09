@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="adding member functions to constructor of Noc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="routing path ports not printing correctly">
       <change beforePath="$PROJECT_DIR$/noc.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/switchallocator.py" beforeDir="false" afterPath="$PROJECT_DIR$/switchallocator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667996570501</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="routing path ports not printing correctly">
+      <created>1667998300568</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667998300568</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +183,7 @@
     <MESSAGE value="Added print method for routing_path_ports list" />
     <MESSAGE value="code ready for debugging routing_algo_ports" />
     <MESSAGE value="adding member functions to constructor of Noc" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding member functions to constructor of Noc" />
+    <MESSAGE value="routing path ports not printing correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="routing path ports not printing correctly" />
   </component>
 </project>
