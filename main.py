@@ -3,6 +3,7 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import random
+import noc
 
 if __name__ == '__main__':
     with open('traffic.txt', 'r') as file:
@@ -38,7 +39,7 @@ if __name__ == '__main__':
 
             print(header + " " + payload[0] + " " + payload[1] + " " + payload[2] + " " + tail+"\n")
 
-
+    noc_obj = noc.Noc('XY', packetList, cycleList)
 
 
 

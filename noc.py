@@ -7,9 +7,8 @@ class Noc :
     routing_path_ports = []
     routing_path_routers = []
 
-    def __init__(self, traffic_file, routing_algo, latency, cycle_list, packet_list) :
-        self.latency = latency
-        self.traffic_file = traffic_file
+    def __init__(self, routing_algo, cycle_list, packet_list) :
+
         self.routing_algo = routing_algo
         self.cycle_list = cycle_list
         self.packet_list = packet_list
@@ -60,7 +59,7 @@ class Noc :
 
             # here we need a return statement from the router called to signify packet has been transmitted
 
-            print_routing_path_ports()
+            self.print_routing_path_ports()
 
             
 

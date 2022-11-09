@@ -7,7 +7,7 @@ class Port:
         self.buffer = Queue(maxsize=5)
         self.connected_router_port = None
         self.owner_router = owner_router
-        self.name = self.name
+        self.name = name
 
     def send_to_port(self, incoming_flit):
         self.buffer.put(incoming_flit)

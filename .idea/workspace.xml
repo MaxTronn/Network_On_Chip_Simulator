@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="Added some code for transmitting packets">
-      <change beforePath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crossbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossbar.py" afterDir="false" />
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="Added print method for routing_path_ports list">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/noc.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667985920249</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added print method for routing_path_ports list">
+      <created>1667993257081</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667993257081</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +125,7 @@
     <MESSAGE value="Implemented switch allocator class" />
     <MESSAGE value="Added comments for switch allocator class" />
     <MESSAGE value="Added some code for transmitting packets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some code for transmitting packets" />
+    <MESSAGE value="Added print method for routing_path_ports list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added print method for routing_path_ports list" />
   </component>
 </project>
