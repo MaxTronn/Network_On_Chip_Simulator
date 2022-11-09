@@ -15,7 +15,6 @@ class SwitchAllocator:
         self.owner_router = owner_router
         self.proc_ele = owner_router.proc_ele
         self.routing_algo = owner_router.routing_algo
-        self.destination_port = None
 
 
     # This function is called for the header flit to make connections in the crossbar
@@ -35,17 +34,19 @@ class SwitchAllocator:
         # If the current router is the destination router, send the flit to Proc_ele port
         if(Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.owner_router.proc_ele)
-            self.destination_port = self.owner_router.proc_ele
 
         # Search if adjacent router is the destination router
         elif(self.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.north.connected_router_port.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.owner_router.north)
 
+
         elif(self.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.south.connected_router_port.owner_router) :
             self.owner_router.Crossbar.connect(source_port, self.owner_router.south)
 
+
         elif (self.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.east.connected_router_port.owner_router):
             self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
+
 
         elif (self.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.west.connected_router_port.owner_router):
             self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
@@ -56,8 +57,10 @@ class SwitchAllocator:
                 if(self.east != None) :
                     self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
 
+
                 else:
                     self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
+
 
             else : # routing_algo == 'YX'
                 if (self.north != None):
@@ -69,7 +72,6 @@ class SwitchAllocator:
 
     # This function is called when the tail flit arrives at the router
     def disconnect_ports(self):
-        self.destination_port = None
         self.owner_router.Crossbar.terminate_connections()
 
 
