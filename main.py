@@ -12,9 +12,9 @@ if __name__ == '__main__':
         decto2bin = ['00', '01', '10', '11']
         for i in range(len(line)):
             min_ind = i
-            cyclei = line[min_ind].split(" ")[0]
+            cyclei = int(line[min_ind].split(" ")[0])
             for j in range(i+1, len(line)):
-                cyclej = line[j].split(" ")[0]
+                cyclej = int(line[j].split(" ")[0])
                 if cyclei > cyclej:
                     min_ind = j
 

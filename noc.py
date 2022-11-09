@@ -36,7 +36,6 @@ class Noc :
         self.router_list[0][0].south.connect(self.router_list[1][0].north)
         self.router_list[1][0].north.connect(self.router_list[0][0].south)
 
-
     def start_communication(self):
         for packet in range(self.packet_list):
 
