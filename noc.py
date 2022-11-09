@@ -46,7 +46,7 @@ class Noc :
 
             # place the packet in buffer of proc_ele port in source router
             for i in range(5) :
-                self.router_list[s1][s2].proc_ele.buffer.put(self.packet[i])
+                self.router_list[s1][s2].proc_ele.buffer.put(packet[i])
 
             self.router_list[s1][s2].create_routing_path(self.router_list[s1][s2].proc_ele)
 
