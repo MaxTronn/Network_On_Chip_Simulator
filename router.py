@@ -17,11 +17,12 @@ class Router:
     # This function creates the routing path
     def create_routing_path(self, data_port):
         # Switch allocator connects the input port to output port using crossbar
-        self.switch_allocator.connect_ports(data_port)
+        reached_dest = self.switch_allocator.connect_ports(data_port)
 
         # Header flit is now transmitted to the connected port of next router
         # Now, next router needs to further create the routing path
-        self.crossbar.output_port.owner_router.create_routing_path(self.crossbar.output_port)
+        if not reached_dest:
+            self.crossbar.output_port.owner_router.create_routing_path(self.crossbar.output_port)
         # B.west.owner_router.create_routing_path(B.west)
         # C.north.owner_router.create_routing_path(C.north)
 
