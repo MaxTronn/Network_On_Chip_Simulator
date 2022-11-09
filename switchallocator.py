@@ -15,7 +15,6 @@ class SwitchAllocator:
         self.owner_router = owner_router
         self.proc_ele = owner_router.proc_ele
         self.routing_algo = owner_router.routing_algo
-        self.owner_router = owner_router
 
 
     # This function is called for the header flit to make connections in the crossbar
