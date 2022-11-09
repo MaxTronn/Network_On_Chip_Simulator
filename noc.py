@@ -4,6 +4,8 @@ class Noc :
 
     router_list = [[],[]]  # Routers [[A,B],[C,D]]
     packet_list = []
+    routing_path_ports = []
+    routing_path_routers = []
 
     def __init__(self, traffic_file, routing_algo, latency, cycle_list, packet_list) :
         self.latency = latency
@@ -36,6 +38,10 @@ class Noc :
         self.router_list[0][0].south.connect(self.router_list[1][0].north)
         self.router_list[1][0].north.connect(self.router_list[0][0].south)
 
+    def print_routing_path_ports(self):
+        for prt in self.routing_path_ports :
+            print(prt.name)
+
     def start_communication(self):
         for packet in range(self.packet_list):
 
@@ -50,7 +56,8 @@ class Noc :
             self.router_list[s1][s2].create_routing_path(self.router_list[s1][s2].proc_ele)
 
             # here we need a return statement from the router called to signify packet has been transmitted
-            # successfully and we can move to next packet
+
+            print_routing_path_ports()
 
             
 

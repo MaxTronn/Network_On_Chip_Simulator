@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="Corrected connect_port function">
-      <change afterPath="$PROJECT_DIR$/populate.py" afterDir="false" />
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="Added some code for transmitting packets">
       <change beforePath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crossbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossbar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/noc.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/traffic.txt" beforeDir="false" afterPath="$PROJECT_DIR$/traffic.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/switchallocator.py" root0="SKIP_INSPECTION" />
@@ -73,26 +78,26 @@
       <option name="project" value="LOCAL" />
       <updated>1667892978324</updated>
     </task>
-    <task id="LOCAL-00004" summary="switchallocator">
-      <created>1667985381310</created>
+    <task id="LOCAL-00004" summary="Added some code for transmitting packets">
+      <created>1667984792085</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1667985381310</updated>
+      <updated>1667984792085</updated>
     </task>
-    <task id="LOCAL-00005" summary="switchallocator">
-      <created>1667987005806</created>
+    <task id="LOCAL-00005" summary="Added some code for transmitting packets">
+      <created>1667985593919</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1667987005806</updated>
+      <updated>1667985593919</updated>
     </task>
-    <task id="LOCAL-00006" summary="switchallocator">
-      <created>1667988205253</created>
+    <task id="LOCAL-00006" summary="Added some code for transmitting packets">
+      <created>1667985920249</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1667988205253</updated>
+      <updated>1667985920249</updated>
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
@@ -116,7 +121,7 @@
     <MESSAGE value="main" />
     <MESSAGE value="Implemented switch allocator class" />
     <MESSAGE value="Added comments for switch allocator class" />
-    <MESSAGE value="switchallocator" />
-    <option name="LAST_COMMIT_MESSAGE" value="switchallocator" />
+    <MESSAGE value="Added some code for transmitting packets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some code for transmitting packets" />
   </component>
 </project>
