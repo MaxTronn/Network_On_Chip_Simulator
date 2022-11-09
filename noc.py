@@ -16,8 +16,11 @@ class Noc :
 
     # This function initilialises the router objects and defines connections between them.
     def initialize_router_list(self):
-        for i in range(4) :
-            self.router_list.append(router())
+        
+        self.router_list.append(router("A"))
+        self.router_list.append(router("B"))
+        self.router_list.append(router("C"))
+        self.router_list.append(router("D"))
 
         # Defining connections
     def mesh_connect(self):

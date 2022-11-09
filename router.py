@@ -7,11 +7,11 @@ class Router:
 
     def __init__(self, routing_algo,name):
         self.crossbar = crossbar.Crossbar()
-        self.north = port.Port(self)
-        self.south = port.Port(self)
-        self.east = port.Port(self)
-        self.west = port.Port(self)
-        self.proc_ele = port.Port(self)
+        self.north = port.Port(self, "north")
+        self.south = port.Port(self, "south")
+        self.east = port.Port(self, "east")
+        self.west = port.Port(self, "west")
+        self.proc_ele = port.Port(self, "proc_ele")
         self.switch_allocator = switchallocator.SwitchAllocator(routing_algo, self)
         self.name = name
 
@@ -32,12 +32,3 @@ class Router:
             # Now we send the packet (including header_flit) through the routing path and count cycles alongside.
             Noc.routing_path_ports.append(self.crossbar.output_port)
             self.crossbar.output_port.buffer.get()
-
-    def flit_classifier(self, curr_flit):
-        flit_type_bit = curr_flit[:2]
-
-        if flit_type_bit == '00':
-
-        elif flit_type_bit == '01':
-
-        else:
