@@ -26,6 +26,11 @@ class Noc :
         self.router_list[1].append(router.Router(self.routing_algo, "D"))
         self.router_list[1].append(router.Router(self.routing_algo, "C"))
 
+        self.router_list[0][0].set_router_list(self.router_list)
+        self.router_list[0][1].set_router_list(self.router_list)
+        self.router_list[1][1].set_router_list(self.router_list)
+        self.router_list[1][0].set_router_list(self.router_list)
+
         # Defining connections
     def mesh_connect(self):
 
@@ -50,11 +55,11 @@ class Noc :
             print(prt.name)
 
     def start_communication(self):
-        for packet in range(self.packet_list):
+        for packet in self.packet_list:
 
             # s1 and s2 are the bits for source router
-            s1 = packet[0][2]
-            s2 = packet[0][3]
+            s1 = int(packet[0][2])
+            s2 = int(packet[0][3])
 
             # place the packet in buffer of proc_ele port in source router
             for i in range(5) :

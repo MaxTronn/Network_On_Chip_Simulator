@@ -39,10 +39,14 @@ if __name__ == '__main__':
 
             print(header + " " + payload[0] + " " + payload[1] + " " + payload[2] + " " + tail+"\n")
 
-    noc_obj = noc.Noc('XY', packetList, cycleList)
-    noc_obj.mesh_connect()
-    print(noc_obj.router_list[1][0].east.connected_router_port.owner_router.name)
-    print(noc_obj.router_list[1][0].east.connected_router_port.name)
+    # noc_obj = noc.Noc('XY', packetList, cycleList)
+    # noc_obj.mesh_connect()
+    # print(noc_obj.router_list[1][0].east.connected_router_port.owner_router.name)
+    # print(noc_obj.router_list[1][0].east.connected_router_port.name)
 
+    noc_obj = noc.Noc('XY' , cycleList, packetList)
+    noc_obj.start_communication()
+    noc_obj.print_routing_path_ports()
+    # print(type(packetList[0][0][3]))
 
 

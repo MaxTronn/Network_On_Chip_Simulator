@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="code ready for debugging routing_algo_ports">
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="adding member functions to constructor of Noc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crossbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/crossbar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/noc.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
@@ -33,7 +32,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/switchallocator.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/switchallocator.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667994005686</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adding member functions to constructor of Noc">
+      <created>1667996515178</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667996515178</updated>
+    </task>
+    <task id="LOCAL-00010" summary="adding member functions to constructor of Noc">
+      <created>1667996570501</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667996570501</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,17 +179,7 @@
     <MESSAGE value="Added some code for transmitting packets" />
     <MESSAGE value="Added print method for routing_path_ports list" />
     <MESSAGE value="code ready for debugging routing_algo_ports" />
-    <option name="LAST_COMMIT_MESSAGE" value="code ready for debugging routing_algo_ports" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="adding member functions to constructor of Noc" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding member functions to constructor of Noc" />
   </component>
 </project>

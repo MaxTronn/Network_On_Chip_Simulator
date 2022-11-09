@@ -7,6 +7,7 @@ class Router:
     routing_path_ports = []
 
     def __init__(self, routing_algo, name):
+        self.router_list = None
         self.routing_algo = routing_algo
         self.crossbar = crossbar.Crossbar()
         self.north = port.Port(self, "north")
@@ -16,6 +17,10 @@ class Router:
         self.proc_ele = port.Port(self, "proc_ele")
         self.switch_allocator = switchallocator.SwitchAllocator(routing_algo, self)
         self.name = name
+
+    def set_router_list(self, router_list):
+        self.router_list = router_list
+        self.switch_allocator.set_router_list(router_list)
 
     # This function creates the routing path
     def create_routing_path(self, data_port):
