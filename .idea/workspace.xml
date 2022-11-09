@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="main">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-11-2022_11_43_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08-11-2022_11_43_AM__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="785b0a7b-0baa-4220-aafb-299f66aa0981" name="Default Changelist" comment="Corrected connect_port function">
+      <change beforePath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Network_On_Chip_Simulator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noc.py" beforeDir="false" afterPath="$PROJECT_DIR$/noc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/switchallocator.py" beforeDir="false" afterPath="$PROJECT_DIR$/switchallocator.py" afterDir="false" />
     </list>
@@ -33,6 +35,9 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,6 +86,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main" />

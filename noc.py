@@ -36,19 +36,20 @@ class Noc :
         self.router_list[0][0].south.connect(self.router_list[1][0].north)
         self.router_list[1][0].north.connect(self.router_list[0][0].south)
 
+
     def start_communication(self):
-        for p in range(self.packet_list):
-            s1=0
-            s2=0
-            for f in range(self.packet_list[p]):
-                if(f==0):
-                    s1=self.packet_list[p][f][2]
-                    s2=self.packet_list[p][f][3]
-                    s1=int(s1)
-                    s2=int(s2)
-                    self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[p][f])
-                else: 
-                    self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[p][f])
+        for packet in range(self.packet_list):
+
+            # s1 and s2 are the bits for source router
+            s1 = packet[0][2]
+            s2 = packet[0][3]
+
+            # place the packet in buffer of proc_ele port in source router
+            for i in range(5) :
+                self.router_list[s1][s2].proc_ele.buffer.put(self.packet[i])
+
+            # here we need a return statement from the router called to signify packet has been transmitted
+            # successfully and we can move to next packet
 
             
 

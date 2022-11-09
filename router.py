@@ -13,6 +13,15 @@ class Router:
         self.west = port.Port()
         self.proc_ele = port.Port()
         self.switch_allocator = switchallocator.SwitchAllocator(routing_algo, self)
+
+    def transmit_packet(self):
+        # Switch allocator connects the proc_ele port and port of the next router
+        self.switch_allocator.connect_ports(self.proc_ele)
+
+        # Data is now transmitted to the connected port of next router
+        # Now, next router needs to further transmit the data
+        self.switch_allocator.destination_port.owner_router.crossbar.transfer_data()
+
     def flit_classifier(self, curr_flit):
         flit_type_bit = curr_flit[:2]
 
