@@ -12,10 +12,7 @@ class SwitchAllocator:
 
 
     def __init__(self, routing_algo, owner_router):
-        self.north = owner_router.north
-        self.south = owner_router.south
-        self.east = owner_router.east
-        self.west = owner_router.west
+        self.owner_router = owner_router
         self.proc_ele = owner_router.proc_ele
         self.routing_algo = owner_router.routing_algo
         self.owner_router = owner_router
@@ -37,65 +34,40 @@ class SwitchAllocator:
 
         # If the current router is the destination router, send the flit to Proc_ele port
         if(Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router) :
-            self.owner_router.Crossbar.connect(source_port, self.proc_ele)
+            self.owner_router.Crossbar.connect(source_port, owner_router.proc_ele)
 
         # Search if adjacent router is the destination router
-        elif(self.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.north.connected_router_port.owner_router) :
-            self.owner_router.Crossbar.connect(source_port, self.north)
+        elif(self.north != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.north.connected_router_port.owner_router) :
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.north)
 
-        elif(self.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.south.connected_router_port.owner_router) :
-            self.owner_router.Crossbar.connect(source_port, self.south)
+        elif(self.south != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.south.connected_router_port.owner_router) :
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.south)
 
-        elif (self.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.east.connected_router_port.owner_router):
-            self.owner_router.Crossbar.connect(source_port, self.east)
+        elif (self.east != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.east.connected_router_port.owner_router):
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
 
-        elif (self.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.west.connected_router_port.owner_router):
-            self.owner_router.Crossbar.connect(source_port, self.west)
+        elif (self.west != None and Noc.router_list[dest_bit_1][dest_bit_0] == self.owner_router.west.connected_router_port.owner_router):
+            self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
 
         else :
             #If ajacent router is not destination router, send to the next router as per routing algo
             if(self.routing_algo == 'XY') :
                 if(self.east != None) :
-                    self.owner_router.Crossbar.connect(source_port, self.east)
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.east)
 
                 else:
-                    self.owner_router.Crossbar.connect(source_port, self.west)
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.west)
 
             else : # routing_algo == 'YX'
                 if (self.north != None):
-                    self.owner_router.Crossbar.connect(source_port, self.north)
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.north)
 
                 else:
-                    self.owner_router.Crossbar.connect(source_port, self.south)
+                    self.owner_router.Crossbar.connect(source_port, self.owner_router.south)
 
 
     # This function is called when the tail flit arrives at the router
     def disconnect_ports(self):
         self.owner_router.Crossbar.terminate_connections()
-
-    # def reallocate(self, source, destination):
-    #
-    #     self.src = source
-    #     self.dest = destination
-    #
-    #     if self.src == '00' and self.dest == '10':
-    #         router_list[1].west = router_list[0].east
-    #         router_list[1].south = router_list[1].west
-    #         router_list[2].north = router_list[1].south
-    #
-    #     elif self.src == '01' and self.dest == '11':
-    #         router_list[0].east = router_list[1].west
-    #         router_list[0].south = router_list[0].east
-    #         router_list[3].north = router_list[0].south
-    #
-    #     elif self.src == '10' and self.dest == '00':
-    #         router_list[3].east = router_list[2].west
-    #         router_list[3].north = router_list[3].east
-    #         router_list[0].south = router_list[3].north
-    #
-    #     elif self.src == '11' and self.dest == '01':
-    #         router_list[2].west = router_list[3].east
-    #         router_list[2].north = router_list[2].west
-    #         router_list[1].south = router_list[2].north
 
 
