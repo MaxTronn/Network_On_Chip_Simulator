@@ -48,6 +48,8 @@ class Noc :
             for i in range(5) :
                 self.router_list[s1][s2].proc_ele.buffer.put(self.packet[i])
 
+            self.router_list[s1][s2].create_routing_path(self.router_list[s1][s2].proc_ele)
+
             # here we need a return statement from the router called to signify packet has been transmitted
             # successfully and we can move to next packet
 

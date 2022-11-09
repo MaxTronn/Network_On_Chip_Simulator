@@ -16,7 +16,7 @@ class Router:
 
 
     def create_routing_path(self, data_port):
-        # Switch allocator connects the proc_ele port and port of the next router
+        # Switch allocator connects the input port to output port using crossbar
         self.switch_allocator.connect_ports(data_port)
 
         # Header flit is now transmitted to the connected port of next router
