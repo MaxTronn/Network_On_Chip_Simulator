@@ -3,7 +3,7 @@ from queue import Queue
 
 class Port:
 
-    def __init__(self, owner_router,name):
+    def __init__(self, owner_router, name):
         self.buffer = Queue(maxsize=5)
         self.connected_router_port = None
         self.owner_router = owner_router
