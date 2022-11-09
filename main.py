@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
             line[i], line[min_ind] = line[min_ind], line[i]
 
-        for i in range(1):
+        for i in range(len(line)):
             bitword = line[i].split(" ")
 
             cycle = int(bitword[0])
@@ -43,8 +43,7 @@ if __name__ == '__main__':
     # noc_obj.mesh_connect()
     # print(noc_obj.router_list[1][0].east.connected_router_port.owner_router.name)
     # print(noc_obj.router_list[1][0].east.connected_router_port.name)
-
-    noc_obj = noc.Noc('YX' , cycleList, packetList)
+    noc_obj = noc.Noc('XY', cycleList, packetList)
     noc_obj.start_communication()
 
     # print(type(packetList[0][0][3]))

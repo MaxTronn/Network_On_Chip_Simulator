@@ -1,5 +1,5 @@
 import router
-
+logFile = open("populate.txt", 'w', newline='')
 class Noc :
 
     # router_list = [[],[]]  # Routers [[A,B],[C,D]]
@@ -54,21 +54,31 @@ class Noc :
         for prt in router.Router.routing_path_ports :
             print(prt.owner_router.name +  " " +  prt.name)
 
-    def start_communication(self):
-        for packet in self.packet_list:
+        router.Router.routing_path_ports = []
 
+    def start_communication(self):
+        for i in range(len(self.packet_list)):
+            print("hi")
             # s1 and s2 are the bits for source router
-            s1 = int(packet[0][2])
-            s2 = int(packet[0][3])
+            s1 = int(self.packet_list[i][0][2])
+            s2 = int(self.packet_list[i][0][3])
+            d1 = int(self.packet_list[i][0][4])
+            d2 = int(self.packet_list[i][0][5])
 
             # place the packet in buffer of proc_ele port in source router
-            for i in range(5) :
-                self.router_list[s1][s2].proc_ele.buffer.put(packet[i])
+            for j in range(5) :
+                self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][j])
 
             self.router_list[s1][s2].create_routing_path(self.router_list[s1][s2].proc_ele)
+            print("hi")
+
+            for j in range(len(router.Router.routing_path_ports)):
+                string = str(int(self.cycle_list[i]) + j)+": ROUTER "+router.Router.routing_path_ports[j].owner_router.name + " RECEIVED FLIT: "#+self.router_list[d1][d2].proc_ele.buffer.get()+"\n"
+                print(string)
+                logFile.write(string)
+            print("hi")
 
             # here we need a return statement from the router called to signify packet has been transmitted
-
             self.print_routing_path_ports()
 
             
