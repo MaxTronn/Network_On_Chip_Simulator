@@ -65,7 +65,6 @@ if __name__ == "__main__":
     plt2.xlabel("Packet number")
     plt2.ylabel("Latency (Number of Cycles)")
     plt2.title("Latency vs Packet sent")
-    plt2.show()
 
     data = {'A_PE': pa, 'B_PE': pb, 'C_PE': pc, 'D_PE': pd, 'A-B': ab, 'B-C': bc, 'C-D': cd, 'D-A': da}
     links = list(data.keys())
