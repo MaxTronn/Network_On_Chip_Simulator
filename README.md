@@ -83,4 +83,4 @@ Reads the Log file "populate.log" and creates the required plots:
 
 
 
-To run the code, the traffic file should be present in the same directory as the code files. The traffic file should be named "traffic.txt" and the log file will be named "populate.log". Run the "main.py" file and outputs will be visible on the terminal. To check the graph plots, run the "readLog.py" file and the plots will be depicted.
+To run the code, the traffic file should be present in the same directory as the code files. The traffic file should be named "traffic.txt", and the log file will be named "populate.log". Run the "main.py" file and outputs will be visible on the terminal. To check the graph plots, run the "readLog.py" file, and the plots will be depicted.
