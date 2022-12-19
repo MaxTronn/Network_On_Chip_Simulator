@@ -15,7 +15,7 @@ class Router:
         self.east = port.Port(self, "east")
         self.west = port.Port(self, "west")
         self.proc_ele = port.Port(self, "proc_ele")
-        self.switch_allocator = switchallocator.SwitchAllocator(routing_algo, self)
+        self.switch_allocator = switchallocator.SwitchAllocator(self)
         self.name = name
 
     def set_router_list(self, router_list):

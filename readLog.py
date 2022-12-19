@@ -80,7 +80,3 @@ if __name__ == "__main__":
     plt.ylabel("Frequency of various links used for flit transfer")
     plt.title("Link Frequency")
     plt.show()
-
-
-
-

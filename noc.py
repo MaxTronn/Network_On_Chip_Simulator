@@ -3,11 +3,6 @@ logFile = open("populate.log", 'w', newline='')
 
 class Noc :
 
-    # router_list = [[],[]]  # Routers [[A,B],[C,D]]
-    # packet_list = []
-    # routing_path_ports = []
-    # routing_path_routers = []
-
     def __init__(self, routing_algo, cycle_list, packet_list) :
 
         self.routing_algo = routing_algo
@@ -60,14 +55,10 @@ class Noc :
 
     def start_communication(self):
         for i in range(len(self.packet_list)):
-            print("hi")
 
             # s1 and s2 are the bits for source router
             s1 = int(self.packet_list[i][0][2])
             s2 = int(self.packet_list[i][0][3])
-            d1 = int(self.packet_list[i][0][4])
-            d2 = int(self.packet_list[i][0][5])
-
             # place the header flit in buffer of proc_ele port of source router
 
             self.router_list[s1][s2].proc_ele.buffer.put(self.packet_list[i][0])
@@ -95,7 +86,8 @@ class Noc :
                     cur_cycle += 1
                     string = str(int(cur_cycle)) + "  :  " + self.packet_list[i][j] + "  flit was sent from " + \
                              source_port.name + " port of router " + source_port.owner_router.name\
-                             + " to " + dest_port.name + " port of router " + dest_port.owner_router.name + "\n"
+                             + " to " + dest_port.name + " port of router " + dest_port.owner_router.name + " : " + \
+                             str(int(i+1)) + "\n"
                     print(string)
                     logFile.write(string)
 
@@ -109,4 +101,3 @@ class Noc :
             router.Router.routing_path_ports = []
 
         logFile.close()
-

@@ -1,3 +1,4 @@
+#crossbar class for mapping input port to output port
 class Crossbar:
     def __init__(self):
         self.input_port = None
@@ -11,9 +12,6 @@ class Crossbar:
     def transfer_data(self):
         self.output_port.buffer.put(self.input_port.buffer.get())
 
-
     def terminate_connections(self):
         self.input_port = None
         self.output_port = None
-
-

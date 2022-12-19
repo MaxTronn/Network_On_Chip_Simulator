@@ -10,7 +10,7 @@ from crossbar import Crossbar
 class SwitchAllocator:
 
 
-    def __init__(self, routing_algo, owner_router):
+    def __init__(self, owner_router):
         self.owner_router = owner_router
         self.proc_ele = owner_router.proc_ele
         self.routing_algo = owner_router.routing_algo
@@ -76,5 +76,3 @@ class SwitchAllocator:
     # This function is called when the tail flit arrives at the router
     def disconnect_ports(self):
         self.owner_router.crossbar.terminate_connections()
-
-

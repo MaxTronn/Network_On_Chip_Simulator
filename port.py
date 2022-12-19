@@ -1,6 +1,6 @@
 from queue import Queue
 
-
+# This class represents a port on a router
 class Port:
 
     def __init__(self, owner_router, name):
@@ -17,4 +17,3 @@ class Port:
 
     def connect(self, router_port):
         self.connected_router_port = router_port
-
