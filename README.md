@@ -28,6 +28,15 @@ noc File:
 5. The buffer of the accessed router ports are emptied before the access of the subsequent packets.
 
 
+router File:
+
+1. The Router class has attributes of: Ports, Switch Allocator, and Crossbar
+2. The path followed by the flits for each packet - is stored in the routing_path_ports class variable of class Router.
+3. create_routing_path() function is recursively called until the header flit reaches destination router.
+4. Thus, a path is established for the other flits of the packet to follow until they too reach the destination.  
+5. Routing path ports is emptied after routing each packet (in start_communication() function of NoC class).
+
+
 switchallocator File:
 
 1. Switch Allocator provides control information to the crossbar.   
