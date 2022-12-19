@@ -27,7 +27,7 @@ class Router:
 
         Router.routing_path_ports.append(data_port)
 
-        # Switch allocator connects the input port to output port using crossbar
+        # Crossbar connects the input port to output port using the Switch Allocator
         reached_dest = self.switch_allocator.connect_ports(data_port)
 
         # Header flit is now transmitted to the connected port of next router
