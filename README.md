@@ -46,11 +46,11 @@ readLog File:
         2. This data is used to calculate number of cycles taken to route the packet in the mesh, from source to destination router.
 
 Switch Allocator:
-    -Switch Allocator provides control information to the crossbar. 
-    -Triggered for Header/Tail flits only.
-    -It sets connections for the crossbar after checking type and destination.
-    -Also disconnects ports once tail flit has reached destination.
-    -Works for both 'XY' and 'YX' routing algorithms.
+    1.Switch Allocator provides control information to the crossbar. 
+    2.Triggered for Header/Tail flits only.
+    3.It sets connections for the crossbar after checking type and destination.
+    4.Also disconnects ports once tail flit has reached destination.
+    5.Works for both 'XY' and 'YX' routing algorithms.
     
     
 write xbar, port
